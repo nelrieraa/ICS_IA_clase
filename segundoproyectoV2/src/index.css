@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 50px;
+  text-align: center;
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.ficha {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagen-producto {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cabecera h2 {
+  margin: 10px 0 5px;
+}
+
+.cabecera p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.detalles ul {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.detalles li {
+  margin: 5px 0;
+}
+
+.btn-carrito {
+  margin-top: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-carrito:hover {
+  background-color: #2980b9;
+}
+
+.pie-ficha {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.oferta {
+  color: red;
+  margin-left: 5px;
+}
+
+.no-stock {
+  color: #c0392b;
+}
