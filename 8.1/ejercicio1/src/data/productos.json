@@ -1,0 +1,6 @@
+[
+  { "id": 1, "nombre": "Teclado Mecánico", "precio": 85 },
+  { "id": 2, "nombre": "Ratón Gaming", "precio": 45 },
+  { "id": 3, "nombre": "Monitor 144Hz", "precio": 199 },
+  { "id": 4, "nombre": "Auriculares Pro", "precio": 120 }
+]
