@@ -1,0 +1,55 @@
+.home {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.home-subtitle {
+  color: #aaa;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.home-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.home-card {
+  background-color: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 2.5rem 3rem;
+  width: 260px;
+  transition: transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  border-color: #e50914;
+}
+
+.home-card-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.home-card h2 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.home-card p {
+  color: #888;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,151 @@
+.actor-detail-page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: #fff;
+}
+
+.actor-hero {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  align-items: flex-start;
+}
+
+.actor-detail-photo {
+  width: 200px;
+  min-width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  background-color: #2a2a2a;
+}
+
+.actor-detail-info {
+  flex: 1;
+}
+
+.actor-detail-name {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.badge {
+  background-color: #e50914;
+  color: #fff;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+
+.actor-detail-bio {
+  color: #bbb;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.filmography-section {
+  margin-top: 1rem;
+}
+
+.filmography-title {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  border-left: 4px solid #e50914;
+  padding-left: 0.75rem;
+}
+
+.filmography-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.25rem;
+}
+
+.film-card {
+  background-color: #1f1f1f;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.film-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  border-color: #e50914;
+}
+
+.film-poster-wrapper {
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background-color: #2a2a2a;
+}
+
+.film-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.film-card:hover .film-poster {
+  transform: scale(1.05);
+}
+
+.film-info {
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.film-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.film-year {
+  font-size: 0.78rem;
+  color: #888;
+}
+
+.film-character {
+  font-size: 0.78rem;
+  color: #e50914;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+  .actor-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

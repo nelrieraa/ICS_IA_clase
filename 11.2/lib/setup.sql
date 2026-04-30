@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS recetas_blog;
+USE recetas_blog;
+
+CREATE TABLE IF NOT EXISTS recetas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(255) NOT NULL,
+  descripcion_corta TEXT NOT NULL,
+  ingredientes TEXT NOT NULL,
+  instrucciones TEXT NOT NULL,
+  tiempo_coccion INT NOT NULL COMMENT 'minutos',
+  fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS comentarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  receta_id INT NOT NULL,
+  autor VARCHAR(100) NOT NULL,
+  texto TEXT NOT NULL,
+  fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (receta_id) REFERENCES recetas(id) ON DELETE CASCADE
+);

@@ -1,0 +1,152 @@
+.detail-page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: #fff;
+}
+
+.detail-hero {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  align-items: flex-start;
+}
+
+.detail-poster {
+  width: 220px;
+  min-width: 220px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.detail-info {
+  flex: 1;
+}
+
+.detail-title {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.badge {
+  background-color: #e50914;
+  color: #fff;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.badge-outline {
+  border: 1px solid #555;
+  color: #ccc;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.detail-synopsis {
+  color: #bbb;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.cast-section {
+  margin-top: 1rem;
+}
+
+.cast-title {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  border-left: 4px solid #e50914;
+  padding-left: 0.75rem;
+}
+
+.cast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.cast-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #1f1f1f;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.cast-card:hover {
+  border-color: #e50914;
+  transform: translateY(-2px);
+}
+
+.cast-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: #2a2a2a;
+}
+
+.cast-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cast-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cast-character {
+  font-size: 0.8rem;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+  .detail-hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detail-poster {
+    width: 180px;
+    min-width: 180px;
+  }
+}
