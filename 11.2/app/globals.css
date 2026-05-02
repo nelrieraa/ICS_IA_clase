@@ -16,7 +16,6 @@ a {
   text-decoration: none;
 }
 
-/* Header */
 .site-header {
   background-color: #2d6a4f;
   color: #fff;
@@ -43,14 +42,12 @@ a {
   color: #fff;
 }
 
-/* Main container */
 .container {
   max-width: 960px;
   margin: 2rem auto;
   padding: 0 1.5rem;
 }
 
-/* Buttons */
 .btn {
   display: inline-block;
   padding: 0.55rem 1.2rem;
@@ -89,7 +86,6 @@ a {
   background-color: #c1121f;
 }
 
-/* Cards */
 .recipe-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -129,7 +125,6 @@ a {
   color: #999;
 }
 
-/* Forms */
 .form-card {
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -191,7 +186,6 @@ a {
   margin-bottom: 1rem;
 }
 
-/* Detail page */
 .detail-header {
   display: flex;
   align-items: flex-start;
@@ -240,7 +234,6 @@ a {
   font-weight: 600;
 }
 
-/* Comments */
 .comment-list {
   display: flex;
   flex-direction: column;
@@ -273,7 +266,6 @@ a {
   color: #444;
 }
 
-/* Page titles */
 .page-title {
   font-size: 1.8rem;
   color: #1b4332;
@@ -286,7 +278,6 @@ a {
   margin-bottom: 1.5rem;
 }
 
-/* Loading skeleton */
 .skeleton {
   background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
   background-size: 200% 100%;
@@ -320,4 +311,41 @@ a {
 
 .empty-state p {
   margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 1.5rem auto;
+    padding: 0 1.25rem;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .site-header nav a {
+    margin-left: 0.75rem;
+    font-size: 0.88rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .form-card {
+    padding: 1.25rem;
+    max-width: 100%;
+  }
+
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
 }
