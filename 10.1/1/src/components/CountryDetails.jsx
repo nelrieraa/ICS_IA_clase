@@ -8,13 +8,12 @@ export default function CountryDetails() {
     (c) => c.name.common.toLowerCase() === countryName.toLowerCase()
   );
 
-  
   if (!country) {
     return (
-      <div style={{ padding: '40px', textAlign: 'center' }}>
+      <div className="not-found">
         <h2 style={{ color: '#dc3545' }}>🕵️‍♂️ País no encontrado</h2>
         <p>El país "<strong>{countryName}</strong>" no existe en nuestra base de datos de Europa.</p>
-        <Link to="/">Volver al inicio</Link>
+        <Link to="/" className="error-link">Volver al inicio</Link>
       </div>
     );
   }
@@ -22,39 +21,36 @@ export default function CountryDetails() {
   const formattedPopulation = new Intl.NumberFormat().format(country.population);
   const languages = country.languages ? Object.values(country.languages).join(', ') : 'N/A';
 
- 
-  const borderCountries = country.borders?.map(code => {
-    
-    return countries.find(c => c.cca3 === code);
-  }).filter(Boolean); 
+  const borderCountries = country.borders?.map(code =>
+    countries.find(c => c.cca3 === code)
+  ).filter(Boolean);
 
   return (
-    <div style={{ padding: '40px', maxWidth: '800px', fontFamily: 'sans-serif' }}>
-      <header style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
-        <img src={country.flags.svg} alt={country.name.common} style={{ width: '120px', borderRadius: '8px' }} />
+    <div className="country-detail">
+      <header className="country-header">
+        <img src={country.flags.svg} alt={country.name.common} className="country-header-flag" />
         <div>
-          <h1 style={{ margin: 0 }}>{country.name.common}</h1>
-          <p style={{ margin: 0, color: '#666' }}>{country.name.official}</p>
+          <h1>{country.name.common}</h1>
+          <p>{country.name.official}</p>
         </div>
       </header>
 
-      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-        <div style={cardStyle}><strong>Capital:</strong> <p>{country.capital?.[0]}</p></div>
-        <div style={cardStyle}><strong>Población:</strong> <p>{formattedPopulation}</p></div>
-        <div style={cardStyle}><strong>Región:</strong> <p>{country.subregion}</p></div>
-        <div style={cardStyle}><strong>Idiomas:</strong> <p>{languages}</p></div>
+      <section className="country-info-grid">
+        <div className="info-card"><strong>Capital:</strong> <p>{country.capital?.[0]}</p></div>
+        <div className="info-card"><strong>Población:</strong> <p>{formattedPopulation}</p></div>
+        <div className="info-card"><strong>Región:</strong> <p>{country.subregion}</p></div>
+        <div className="info-card"><strong>Idiomas:</strong> <p>{languages}</p></div>
       </section>
 
-     
-      <section style={{ marginTop: '30px' }}>
+      <section className="borders-section">
         <h3>Países Fronterizos:</h3>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+        <div className="borders-list">
           {borderCountries && borderCountries.length > 0 ? (
             borderCountries.map(border => (
-              <Link 
+              <Link
                 key={border.cca3}
                 to={`/country/${border.name.common.toLowerCase()}`}
-                style={borderLinkStyle}
+                className="border-link"
               >
                 {border.name.common}
               </Link>
@@ -67,16 +63,3 @@ export default function CountryDetails() {
     </div>
   );
 }
-
-const cardStyle = { backgroundColor: '#f8f9fa', padding: '15px', borderRadius: '8px' };
-
-const borderLinkStyle = {
-  padding: '8px 15px',
-  backgroundColor: '#fff',
-  border: '1px solid #007bff',
-  borderRadius: '20px',
-  color: '#007bff',
-  textDecoration: 'none',
-  fontSize: '0.9rem',
-  transition: '0.3s'
-};

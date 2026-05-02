@@ -4,15 +4,15 @@ export default function ErrorPage() {
   const error = useRouteError();
 
   return (
-    <div style={{ textAlign: 'center', padding: '50px', fontFamily: 'sans-serif' }}>
+    <div className="error-page">
       <h1>Oops! Algo salió mal</h1>
       <p>Lo sentimos, ha ocurrido un error inesperado.</p>
       <p style={{ color: '#999' }}>
         <i>{error.statusText || error.message}</i>
       </p>
-      <Link to="/" style={{ color: '#007bff', textDecoration: 'none', fontWeight: 'bold' }}>
+      <Link to="/" className="error-link">
         Volver al inicio
       </Link>
     </div>
   );
-} 
+}
