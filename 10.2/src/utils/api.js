@@ -1,6 +1,3 @@
-// Simulamos una base de datos en memoria con arrays.
-// Al ser módulo singleton en Vite, el estado persiste mientras la app esté abierta.
-
 let projects = [
   { id: '1', name: 'Rediseño Web Corporativa', description: 'Actualizar la web de la empresa con nuevo branding.', createdAt: '2025-01-10' },
   { id: '2', name: 'App Móvil de Inventario', description: 'Desarrollar app para gestión de stock en almacén.', createdAt: '2025-02-14' },
@@ -21,10 +18,7 @@ let tasks = [
 let nextProjectId = 4;
 let nextTaskId = 9;
 
-// --- Proyectos ---
-
 export function getProjects() {
-  // Devuelve copia para no exponer la referencia interna
   return [...projects];
 }
 
@@ -44,12 +38,9 @@ export function createProject({ name, description }) {
 }
 
 export function deleteProject(id) {
-  // Al borrar proyecto, borramos también sus tareas (cascade)
   projects = projects.filter((p) => p.id !== id);
   tasks = tasks.filter((t) => t.projectId !== id);
 }
-
-// --- Tareas ---
 
 export function getTasksByProject(projectId) {
   return tasks.filter((t) => t.projectId === projectId);

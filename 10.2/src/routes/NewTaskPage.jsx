@@ -1,14 +1,12 @@
 import { Form, useActionData, useNavigation, redirect, Link, useLoaderData } from 'react-router-dom';
 import { createTask, getProjectById } from '../utils/api';
 
-// loader: cargamos el proyecto para mostrar su nombre en el formulario.
 export async function loader({ params }) {
   const project = getProjectById(params.projectId);
   if (!project) throw new Response('Proyecto no encontrado', { status: 404 });
   return { project };
 }
 
-// action: valida y crea la tarea, luego redirige al detalle del proyecto.
 export async function action({ request, params }) {
   const formData = await request.formData();
   const title = formData.get('title')?.toString().trim();

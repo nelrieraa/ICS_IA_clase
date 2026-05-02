@@ -17,14 +17,12 @@ a {
   color: inherit;
 }
 
-/* Layout principal */
 .app-layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Navegación */
 .main-nav {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   padding: 0 2rem;
@@ -57,7 +55,6 @@ a {
   color: #e94560;
 }
 
-/* Contenido */
 .page-content {
   flex: 1;
   padding: 2rem;
@@ -66,7 +63,6 @@ a {
   width: 100%;
 }
 
-/* Títulos de página */
 .page-header {
   display: flex;
   align-items: center;
@@ -82,7 +78,6 @@ a {
   color: #1a1a2e;
 }
 
-/* Botones */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -117,7 +112,6 @@ a {
 
 .btn-sm { padding: 0.3rem 0.7rem; font-size: 0.8rem; }
 
-/* Cards */
 .card {
   background: #fff;
   border-radius: 12px;
@@ -129,7 +123,6 @@ a {
 
 .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-/* Lista de proyectos */
 .project-list {
   display: flex;
   flex-direction: column;
@@ -173,7 +166,6 @@ a {
   white-space: nowrap;
 }
 
-/* Tareas */
 .task-list {
   display: flex;
   flex-direction: column;
@@ -210,7 +202,6 @@ a {
   margin-left: auto;
 }
 
-/* Toggle checkbox */
 .toggle-btn {
   width: 22px;
   height: 22px;
@@ -232,7 +223,6 @@ a {
   border-color: #22c55e;
 }
 
-/* Formularios */
 .form-card {
   background: #fff;
   border-radius: 12px;
@@ -288,7 +278,6 @@ a {
   flex-wrap: wrap;
 }
 
-/* Badges */
 .badge {
   display: inline-block;
   padding: 0.2rem 0.55rem;
@@ -301,7 +290,6 @@ a {
 .badge-pending { background: #fef9c3; color: #854d0e; }
 .badge-count { background: #e0e7ff; color: #3730a3; }
 
-/* Mensajes */
 .empty-state {
   text-align: center;
   padding: 3rem 1rem;
@@ -311,7 +299,6 @@ a {
 .empty-state .icon { font-size: 3rem; margin-bottom: 0.75rem; }
 .empty-state p { margin-bottom: 1rem; }
 
-/* Separador de sección */
 .section-header {
   display: flex;
   align-items: center;
@@ -328,7 +315,6 @@ a {
   gap: 0.5rem;
 }
 
-/* Back link */
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -341,7 +327,6 @@ a {
 
 .back-link:hover { color: #e94560; }
 
-/* Página de inicio */
 .home-hero {
   text-align: center;
   padding: 4rem 1rem;
@@ -383,7 +368,6 @@ a {
 .feature-card h3 { font-size: 0.95rem; font-weight: 600; color: #1a1a2e; }
 .feature-card p { font-size: 0.82rem; color: #64748b; margin-top: 0.25rem; }
 
-/* Project detail header */
 .project-detail-header {
   background: linear-gradient(135deg, #1a1a2e, #16213e);
   border-radius: 12px;
@@ -400,7 +384,6 @@ a {
 .project-detail-header h1 { font-size: 1.6rem; margin-bottom: 0.35rem; }
 .project-detail-header p { color: #a8b2d8; font-size: 0.9rem; }
 
-/* Spinner */
 .spinner {
   display: inline-block;
   width: 14px;
@@ -412,3 +395,78 @@ a {
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 768px) {
+  .page-content {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .home-hero {
+    padding: 3rem 1rem;
+  }
+
+  .home-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .project-detail-header {
+    padding: 1.25rem;
+  }
+
+  .project-detail-header h1 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    height: auto;
+    min-height: 60px;
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .main-nav .logo {
+    width: 100%;
+  }
+
+  .page-content {
+    padding: 1.25rem 1rem;
+  }
+
+  .home-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  .form-card {
+    padding: 1.25rem;
+    max-width: 100%;
+  }
+
+  .home-features {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .project-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .task-item {
+    flex-wrap: wrap;
+  }
+
+  .task-actions {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

@@ -1,5 +1,3 @@
-// loader: se ejecuta ANTES de renderizar el componente.
-// React Router llama al loader para obtener los datos necesarios para la ruta.
 import { useLoaderData, Link } from 'react-router-dom';
 import { getProjects } from '../utils/api';
 import ProjectList from '../components/ProjectList';
@@ -10,7 +8,6 @@ export async function loader() {
 }
 
 export default function ProjectsPage() {
-  // useLoaderData: accede a los datos que devolvió el loader de esta ruta.
   const { projects } = useLoaderData();
 
   return (

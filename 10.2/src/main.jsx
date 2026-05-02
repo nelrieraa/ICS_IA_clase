@@ -25,12 +25,10 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       {
         path: 'projects',
-        // loader se ejecuta antes de renderizar para tener los datos listos
         loader: projectsLoader,
         element: <ProjectsPage />,
       },
       {
-        // Importante: /new ANTES de /:projectId para que no lo interprete como un ID
         path: 'projects/new',
         action: newProjectAction,
         element: <NewProjectPage />,
@@ -38,7 +36,6 @@ const router = createBrowserRouter([
       {
         path: 'projects/:projectId',
         loader: projectDetailsLoader,
-        // action maneja toggle, deleteTask y deleteProject según el campo "intent"
         action: projectDetailsAction,
         element: <ProjectDetailsPage />,
       },
