@@ -53,3 +53,23 @@
   color: #888;
   font-size: 0.9rem;
 }
+
+@media (max-width: 600px) {
+  .home {
+    padding: 2.5rem 1rem;
+  }
+
+  .home-title {
+    font-size: 1.8rem;
+  }
+
+  .home-subtitle {
+    font-size: 1rem;
+  }
+
+  .home-card {
+    width: 100%;
+    max-width: 320px;
+    padding: 1.5rem 2rem;
+  }
+}
